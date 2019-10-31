@@ -1,2 +1,0 @@
-# Topkort
-Kortspil til kampen
