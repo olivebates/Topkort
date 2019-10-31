@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC|Molengo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Byt Kort</title>
+</head>
+
+<style>
+    #p1flex,
+    #p2flex {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        
+    }
+
+    #p1flex>div,
+    #p2flex>div {
+        width: 30%;
+    }
+
+    #p1flex>div>img,
+    #p2flex>div>img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+</style>
+
+<body>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!--Nav-->
+    
+    <div class="topnav" id="myTopnav">
+  <a href="forside.html" class="active">Forside</a>
+  <a href="sekort.html">Dine Kort</a>
+  <a href="bytkort.html">Byt</a>
+  <a href="livescore.html">Live Score</a>
+  <a href="indloskort.html">Indløs Kort</a>
+  <a href="sponsor.html">Gratis Sponsor Kort</a>
+  <a href="javascript:void(0);" class="icon" onclick="response()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+ 
+<script>
+function response() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+    
+    <!--Cards-->
+    <h1 class="overskrift">Fodboldkort</h1>
+
+    <h1>
+        Karls kort
+    </h1>
+    <section id="p1flex"></section>
+    <br>
+    <hr>
+    <br>
+    <h1>
+        Dine kort
+    </h1>
+    <section id="p2flex"></section>
+
+    <script>
+        //Set up arrays
+        let p1card = [
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg"
+        ];
+        let p2card = [
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
+            "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg"
+        ];
+
+        function hasClass(elem, className) {
+            return elem.className.split(' ').indexOf(className) > -1;
+        }
+
+
+        $('body').on("click", "#p2flex > div > img", function() {
+            if ($(this).css("border-top-style") == "none")
+                $(this).css("border", "solid #00FF00");
+            else
+                $(this).css("border", "none");
+        });
+
+
+        $(document).ready(function() {
+            //Populate players
+            window.setInterval(function() {
+                // Populate p1
+                if ($('#p1flex > div').length != p1card.length) {
+
+                    //Empty
+                    $('#p1flex').empty();
+
+                    //Populate
+                    $.each(p1card, function(i, img) {
+                        $('#p1flex').append("<div><img src='" + img + "' id='pKort'></div>");
+                    });
+                }
+
+                //Populate p2
+                if ($('#p2flex > div').length != p2card.length) {
+
+                    // Empty
+                    $('#p2flex').empty();
+
+                    // Populate
+                    $.each(p2card, function(i, img) {
+                        $('#p2flex').append("<div><img src='" + img + "' class='p2Kort'></div>");
+                    });
+                }
+            }, 50);
+        });
+
+    </script>
+
+    <div id="sponsorat">
+        <p>
+            Sponsoreret af
+        </p>
+        <img id="cocacola" src="images/cocacolalogo.png">
+    </div>
+
+</body>
+
+</html>
