@@ -17,7 +17,7 @@
         justify-content: space-around;
         flex-wrap: wrap;
         width: 100%;
-        
+
     }
 
     #p1flex>div,
@@ -37,30 +37,31 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!--Nav-->
-    
+
     <div class="topnav" id="myTopnav">
-  <a href="forside.html" class="active">Forside</a>
-  <a href="sekort.html">Dine Kort</a>
-  <a href="bytkort.html">Byt</a>
-  <a href="livescore.html">Live Score</a>
-  <a href="indloskort.html">Indløs Kort</a>
-  <a href="sponsor.html">Gratis Sponsor Kort</a>
-  <a href="javascript:void(0);" class="icon" onclick="response()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
- 
-<script>
-function response() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-    
+        <a href="forside.html" class="active">Forside</a>
+        <a href="sekort.html">Dine Kort</a>
+        <a href="bytkort.html">Byt</a>
+        <a href="livescore.html">Live Score</a>
+        <a href="indloskort.html">Indløs Kort</a>
+        <a href="sponsor.html">Gratis Sponsor Kort</a>
+        <a href="javascript:void(0);" class="icon" onclick="response()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script>
+        function response() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
     <!--Cards-->
     <h1 class="overskrift">Fodboldkort</h1>
 
@@ -75,7 +76,8 @@ function response() {
         Dine kort
     </h1>
     <section id="p2flex"></section>
-
+    
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         //Set up arrays
         let p1card = [
@@ -91,21 +93,21 @@ function response() {
             "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg",
             "https://52f4e29a8321344e30ae-0f55c9129972ac85d6b1f4e703468e6b.ssl.cf2.rackcdn.com/products/pictures/1092580.jpg"
         ];
-
-        function hasClass(elem, className) {
-            return elem.className.split(' ').indexOf(className) > -1;
-        }
-
-
-        $('body').on("click", "#p2flex > div > img", function() {
-            if ($(this).css("border-top-style") == "none")
-                $(this).css("border", "solid #00FF00");
-            else
-                $(this).css("border", "none");
-        });
+        $().ready(function() {
+            function hasClass(elem, className) {
+                return elem.className.split(' ').indexOf(className) > -1;
+            }
 
 
-        $(document).ready(function() {
+            $('body').on("click", "#p2flex > div > img", function() {
+                if ($(this).css("border-top-style") == "none")
+                    $(this).css("border", "solid #00FF00");
+                else
+                    $(this).css("border", "none");
+            });
+
+
+
             //Populate players
             window.setInterval(function() {
                 // Populate p1
