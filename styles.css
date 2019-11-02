@@ -1,8 +1,39 @@
 /*Nav*/
+
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Molengo', sans-serif;
+  font-family: 'Holtwood One SC', serif;
+  background-color: #cde8dd;
+  background-image: url("images/banestreger2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
+.burger {
+  background: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+    padding-bottom: 30px;
+  font-size: 72px;
+  color: #fff;
+  margin:0px;
+  float:right;
+    text-align: right;
+    width:100px;
+}
+
+.burgerItem {
+  color: white;
+  background: #333;
+  border: none;
+  padding: 8px 14px;
+  font-size: 15px;
+  color: #fff;
+  display: none;
+  margin:0px;
+}
+
  
 .topnav {
   overflow: hidden;
@@ -56,15 +87,6 @@ body {
 }
 
 /*Rest*/
-body {
-  font-family: 'Molengo', sans-serif;
-  font-family: 'Holtwood One SC', serif;
-  background-color: #cde8dd;
-  background-image: url("images/banestreger2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-
-}
 
 .overskrift {
 color: #0f3c5a;

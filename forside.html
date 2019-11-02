@@ -14,30 +14,31 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!--Nav-->
+    <button class="burger">=</button>
+    <a href="forside.html" class="burgerItem" style="border-top-left-radius:5px; border-top-right-radius:5px;">Forside</a>
+    <a href="sekort.html" class="burgerItem">Se kort</a>
+    <a href="bytkort.html" class="burgerItem">Byt kort</a>
+    <a href="indloskort.html" class="burgerItem">Indløs Kort</a>
+    <a href="livescore.html" class="burgerItem">Score</a>
+    <a href="sponsor.html" class="burgerItem" style="border-bottom-left-radius:5px; border-bottom-right-radius:5px;">Sponsor</a>
 
-    <div class="topnav" id="myTopnav">
-        <a href="forside.html" class="active">Forside</a>
-        <a href="sekort.html">Dine Kort</a>
-        <a href="bytkort.html">Byt</a>
-        <a href="livescore.html">Score</a>
-        <a href="indloskort.html">Indløs Kort</a>
-        <a href="sponsor.html">Gratis Sponsor Kort</a>
-        <a href="javascript:void(0);" class="icon" onclick="response()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
-        function response() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
+        // find elements
+        var brg = $(".burger")
+        let exp = false
+
+        // handle click and add class
+        brg.on("click", function() {
+            if (exp == true) {
+                $(".burgerItem").css("display", "none");
+                exp = false;
             } else {
-                x.className = "topnav";
+                $(".burgerItem").css("display", "block");
+                exp = true;
             }
-        }
+        })
     </script>
-    
     <h1 class="overskrift">Fodboldkort</h1>
 
     <div class="flexbox">
@@ -54,7 +55,6 @@
         </p>
         <img id="cocacola" src="images/cocacolalogo.png">
     </div>
-
 </body>
 
 </html>
