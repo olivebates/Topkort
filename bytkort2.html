@@ -80,20 +80,17 @@
     </h1>
     <section id="p2flex"></section>
     
-    <a href="bytkort2.html"><button type="button">Byt</button></a>
+    <a href="sekort2.html"><button type="button">Confirm</button></a>
+    <a href="bytkort.html"><button type="button">Cancel</button></a>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
         //Set up arrays
         let p1card = [
-            "images/fodboldkort2.png",
-            "images/fodboldkort2.png",
             "images/fodboldkort4.png"
         ];
         let p2card = [
             "images/fodboldkort1.png",
-            "images/fodboldkort1.png",
-            "images/fodboldkort2.png",
             "images/fodboldkort3.png" 
         ];
         $().ready(function() {
@@ -104,7 +101,7 @@
 
             $('body').on("click", "#p2flex > div > img", function() {
                 if ($(this).css("border-top-style") == "none")
-                    $(this).css("border", "solid #116600");
+                    $(this).css("border", "solid #00FF00");
                 else
                     $(this).css("border", "none");
             });
@@ -135,8 +132,6 @@
                     $.each(p2card, function(i, img) {
                         $('#p2flex').append("<div><img src='" + img + "' class='p2Kort'></div>");
                     });
-                    
-                
                 }
             }, 50);
         });
