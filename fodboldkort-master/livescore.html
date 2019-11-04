@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC|Molengo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Load Jquery-->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!--Nav-->
+
+       <button class="burger">=</button>
+    <a href="forside.html" class="burgerItem" style="border-top-left-radius:5px; border-top-right-radius:5px;">Forside</a>
+    <a href="sekort.html" class="burgerItem">Se kort</a>
+    <a href="bytkort.html" class="burgerItem">Byt kort</a>
+    <a href="indloskort.html" class="burgerItem">Indløs Kort</a>
+    <a href="livescore.html" class="burgerItem">Score</a>
+    <a href="sponsor.html" class="burgerItem" style="border-bottom-left-radius:5px; border-bottom-right-radius:5px;">Sponsor</a>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        // find elements
+        var brg = $(".burger")
+        let exp = false
+
+        // handle click and add class
+        brg.on("click", function() {
+            if (exp == true) {
+                $(".burgerItem").css("display", "none");
+                exp = false;
+            } else {
+                $(".burgerItem").css("display", "block");
+                exp = true;
+            }
+        })
+    </script>
+
+    <!--Content-->
+    <h1 class="overskrift">Score</h1>
+    <!--her er dataen fra: https://footystats.org/embeds/-->
+
+    <div id="fs-standings">
+        <script>
+            (function(w, d, s, o, f, js, fjs) {
+                w['fsStandingsEmbed'] = o;
+                w[o] = w[o] || function() {
+                    (w[o].q = w[o].q || []).push(arguments)
+                };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = o;
+                js.src = f;
+                js.async = 1;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings.js'));
+            mw('params', {
+                leagueID: 2245
+            });
+
+        </script>
+    </div>
+
+
+
+    <div id="fs-upcoming">
+        <script>
+            (function(w, d, s, o, f, js, fjs) {
+                w['fsUpcomingEmbed'] = o;
+                w[o] = w[o] || function() {
+                    (w[o].q = w[o].q || []).push(arguments)
+                };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = o;
+                js.src = f;
+                js.async = 1;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(window, document, 'script', 'fsUpcoming', 'https://cdn.footystats.org/embeds/upcoming.js'));
+            fsUpcoming('params', {
+                teamID: 2516
+            });
+
+        </script>
+    </div>
+
+
+    <!--her slutter dataen fra: https://footystats.org/embeds/-->
+
+</body>
+
+</html>

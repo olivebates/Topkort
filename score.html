@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
 </head>
 
 <body>
-    <!--lånt noget kode fra: https://www.jqueryscript.net/menu/Basic-Hamburger-Navigation-Menu-jQuery-CSS.html-->
+     <!--lånt noget kode fra: https://www.jqueryscript.net/menu/Basic-Hamburger-Navigation-Menu-jQuery-CSS.html-->
     <div class="wrapper">
         <nav class="site-nav">
 
@@ -56,15 +57,56 @@
     </script>
     <!--lånt noget kode fra nedenstående stopper her: https://www.jqueryscript.net/menu/Basic-Hamburger-Navigation-Menu-jQuery-CSS.html-->
 
+
     <!--Content-->
-    <h1 class="overskrift">Sponsor</h1>
+    <h1 class="overskrift">Score</h1>
+    <!--her er dataen fra: https://footystats.org/embeds/-->
 
-    <h3 id="drejhjulet">
-        Drej hjulet og vind med
-    </h3>
-    <img id="sponsor" src="images/cocacolalogo.png">
+    <div id="fs-standings">
+        <script>
+            (function(w, d, s, o, f, js, fjs) {
+                w['fsStandingsEmbed'] = o;
+                w[o] = w[o] || function() {
+                    (w[o].q = w[o].q || []).push(arguments)
+                };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = o;
+                js.src = f;
+                js.async = 1;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings.js'));
+            mw('params', {
+                leagueID: 2245
+            });
 
-    <img style="margin-left: 20px; margin-top: 20px;" id="hjul" src="images/hjul.png">
+        </script>
+    </div>
+
+
+
+    <div id="fs-upcoming">
+        <script>
+            (function(w, d, s, o, f, js, fjs) {
+                w['fsUpcomingEmbed'] = o;
+                w[o] = w[o] || function() {
+                    (w[o].q = w[o].q || []).push(arguments)
+                };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = o;
+                js.src = f;
+                js.async = 1;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(window, document, 'script', 'fsUpcoming', 'https://cdn.footystats.org/embeds/upcoming.js'));
+            fsUpcoming('params', {
+                teamID: 2516
+            });
+
+        </script>
+    </div>
+
+
+    <!--her slutter dataen fra: https://footystats.org/embeds/-->
 
 </body>
+
 </html>

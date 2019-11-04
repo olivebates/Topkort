@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC|Molengo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Load Jquery-->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <!--Nav-->
+
+        <button class="burger">=</button>
+    <a href="forside.html" class="burgerItem" style="border-top-left-radius:5px; border-top-right-radius:5px;">Forside</a>
+    <a href="sekort.html" class="burgerItem">Se kort</a>
+    <a href="bytkort.html" class="burgerItem">Byt kort</a>
+    <a href="indloskort.html" class="burgerItem">Indløs Kort</a>
+    <a href="livescore.html" class="burgerItem">Score</a>
+    <a href="sponsor.html" class="burgerItem" style="border-bottom-left-radius:5px; border-bottom-right-radius:5px;">Sponsor</a>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        // find elements
+        var brg = $(".burger")
+        let exp = false
+
+        // handle click and add class
+        brg.on("click", function() {
+            if (exp == true) {
+                $(".burgerItem").css("display", "none");
+                exp = false;
+            } else {
+                $(".burgerItem").css("display", "block");
+                exp = true;
+            }
+        })
+    </script>
+
+    <!--Content-->
+    <h1 class="overskrift">Nye spillere</h1>
+
+    <h3>Vent på at få en ny spiller. Følg nedtællingen herunder</h3>
+    <p id="demo"></p>
+
+    <!--her har vi lånt noget kode fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_countdown-->
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Nov 3, 2019 16:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = days + " d   " + hours + " t   " +
+                minutes + " min   " + seconds + " sek   ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "Din kode kan indløses til en ny spiller i boden: 283628467";
+            }
+        }, 1000);
+
+    </script>
+
+
+
+
+
+    <h3>Eller scan en QR-kode og få en ny spiller nu</h3>
+
+</body>
+
+</html>

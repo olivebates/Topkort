@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <!--lånt noget kode fra: https://www.jqueryscript.net/menu/Basic-Hamburger-Navigation-Menu-jQuery-CSS.html-->
+       <!--lånt noget kode fra: https://www.jqueryscript.net/menu/Basic-Hamburger-Navigation-Menu-jQuery-CSS.html-->
        <div class="wrapper">
         <nav class="site-nav">
 
@@ -55,23 +55,52 @@ $('.menu-toggle').click(function() {
 
 </script>
         <!--lånt noget kode fra nedenstående stopper her: https://www.jqueryscript.net/menu/Basic-Hamburger-Navigation-Menu-jQuery-CSS.html-->
-    <h1 class="overskrift">Topkort</h1>
 
-    
-        <div style="margin-left: 13px;"><a href="sekort.html"><button type="button">Se kort</button></a></div>
-        <div style="margin-left: 13px;"><a href="bytkort.html"><button type="button">Byt kort</button></a></div>
-        <div style="margin-left: 13px;"><a href="nyespillere.html"><button type="button">Nye spillere</button></a></div>
-        <div style="margin-left: 13px;"><a href="score.html"><button type="button">Score</button></a></div>
-        <div style="margin-left: 13px;"><a href="sponsor.html"><button type="button">Sponsor</button></a></div>
-    
+    <!--Content-->
+    <h1 class="overskrift">Nye spillere</h1>
 
-    <div id="sponsorat">
-        <p>
-            Sponsoreret af
-        </p>
-        <img id="cocacola" src="images/cocacolalogo.png">
-    </div>
+    <h3>Vent på at få en ny spiller. Følg nedtællingen herunder</h3>
+    <p id="demo"></p>
 
+    <!--her har vi lånt noget kode fra https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_countdown-->
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Nov 7, 2019 16:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = days + " d   " + hours + " t   " +
+                minutes + " min   " + seconds + " sek   ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "Din kode kan indløses til en ny spiller i boden: 283628467";
+            }
+        }, 1000);
+
+    </script>
+
+
+
+
+
+    <h3>Eller scan en QR-kode og få en ny spiller nu</h3>
+<img id="qr" src="images/qr.png" style="margin-left: 112px;">
 </body>
 
 </html>
